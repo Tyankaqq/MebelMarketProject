@@ -5,12 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToysMarkerProject"
         mc:Ignorable="d"
-        Title="AuthUserProductWindow" Height="450" Width="800">
+        Title="Товары клиента" Height="450" Width="800">
     <Grid>
         <TextBlock x:Name="RoleNameBox" Text= "{Binding Name}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100" Margin="0, 10, 0, 0"/>
         <TextBlock Text="Пользователь:" VerticalAlignment="Top" HorizontalAlignment="Right" Width="83" Margin="0,10,250,0" Foreground="Black" RenderTransformOrigin="0.213,0.629"/>
         <TextBlock x:Name="FullNameBox" Text="{Binding Name}" VerticalAlignment="Top" HorizontalAlignment="Right" Width="129" Margin="0,10,121,0"/>
+        <Button Content="Выйти" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,10,0,0" Click="BtnExit_Click"/>
         <ListView x:Name="ProductListView" Margin="0,31,0,0">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Background" Value="{Binding RowColor}"/>
+                    <Setter Property="Margin" Value="0,2"/>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -26,10 +33,13 @@
                             <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Manufacturer.Name}" TextWrapping="Wrap"/>
                             <TextBlock Text="{Binding Provider.Name}" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Unit.Name}" TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding Count, StringFormat=Количество: {0}}" TextWrapping="Wrap"/>
                         </StackPanel>
                         <StackPanel Grid.Column="2" HorizontalAlignment="Right">
-                            <TextBlock Text="{Binding Cost}"/>
-                            <TextBlock Text="{Binding Discount}" Foreground="Red" TextDecorations="Strikethrough"/>
+                            <TextBlock Text="{Binding Cost, StringFormat=Цена: {0}}" Foreground="Red" TextDecorations="Strikethrough"/>
+                            <TextBlock Text="{Binding DiscountCost, StringFormat=Итог: {0:F2}}"/>
+                            <TextBlock Text="{Binding Discount, StringFormat=Скидка: {0}%}"/>
                         </StackPanel>
 
                     </Grid>

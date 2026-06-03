@@ -5,8 +5,72 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToysMarkerProject"
         mc:Ignorable="d"
-        Title="AddEditWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Товар" Height="560" Width="800">
+    <ScrollViewer>
+        <Grid Margin="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="ID" Grid.Row="0" Margin="5"/>
+            <TextBox x:Name="IdTextBox" Grid.Row="0" Grid.Column="1" Margin="5" IsReadOnly="True"/>
+
+            <TextBlock Text="Артикул" Grid.Row="1" Margin="5"/>
+            <TextBox x:Name="ArticleTextBox" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Наименование" Grid.Row="2" Margin="5"/>
+            <TextBox x:Name="NameTextBox" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Категория" Grid.Row="3" Margin="5"/>
+            <ComboBox x:Name="CategoryComboBox" Grid.Row="3" Grid.Column="1" Margin="5" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+
+            <TextBlock Text="Описание" Grid.Row="4" Margin="5"/>
+            <TextBox x:Name="DescriptionTextBox" Grid.Row="4" Grid.Column="1" Margin="5" Height="60" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+            <TextBlock Text="Производитель" Grid.Row="5" Margin="5"/>
+            <ComboBox x:Name="ManufacturerComboBox" Grid.Row="5" Grid.Column="1" Margin="5" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+
+            <TextBlock Text="Поставщик" Grid.Row="6" Margin="5"/>
+            <ComboBox x:Name="ProviderComboBox" Grid.Row="6" Grid.Column="1" Margin="5" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+
+            <TextBlock Text="Цена" Grid.Row="7" Margin="5"/>
+            <TextBox x:Name="CostTextBox" Grid.Row="7" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Единица измерения" Grid.Row="8" Margin="5"/>
+            <ComboBox x:Name="UnitComboBox" Grid.Row="8" Grid.Column="1" Margin="5" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+
+            <TextBlock Text="Количество" Grid.Row="9" Margin="5"/>
+            <TextBox x:Name="CountTextBox" Grid.Row="9" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Скидка" Grid.Row="10" Margin="5"/>
+            <TextBox x:Name="DiscountTextBox" Grid.Row="10" Grid.Column="1" Margin="5"/>
+
+            <TextBlock Text="Фото" Grid.Row="11" Margin="5"/>
+            <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal" Margin="5">
+                <Image x:Name="ProductImage" Width="120" Height="80" Stretch="UniformToFill"/>
+                <Button Content="Выбрать фото" Width="130" Height="30" Margin="10,25,0,0" Click="BtnPhoto_Click"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="12" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                <Button Content="Сохранить" Width="120" Height="30" Click="BtnSave_Click" Style="{StaticResource BlueButton}"/>
+                <Button Content="Отмена" Width="120" Height="30" Click="BtnCancel_Click"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>

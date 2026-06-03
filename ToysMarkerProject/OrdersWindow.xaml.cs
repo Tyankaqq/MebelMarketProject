@@ -25,11 +25,57 @@ namespace ToysMarkerProject
         {
             InitializeComponent();
             _user = user;
+            RefreshOrders();
+        }
+
+        private void RefreshOrders()
+        {
             var db = MebelMarketDbContext.GetContext().Orders
                 .Include(p => p.Address)
                 .Include(p => p.User)
                 .ToList();
             DGridOrders.ItemsSource = db;
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AddEditOrderWindow(null, _user);
+            window.ShowDialog();
+            RefreshOrders();
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if ((sender as Button)?.DataContext is Order order)
+            {
+                var window = new AddEditOrderWindow(order, _user);
+                window.ShowDialog();
+                RefreshOrders();
+            }
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (DGridOrders.SelectedItem is not Order order)
+            {
+                MessageBox.Show("Выберите заказ для удаления.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (MessageBox.Show("Удалить выбранный заказ?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                var db = MebelMarketDbContext.GetContext();
+                db.Orders.Remove(order);
+                db.SaveChanges();
+                RefreshOrders();
+            }
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ProductsWindow(_user);
+            window.Show();
+            this.Close();
         }
     }
 }

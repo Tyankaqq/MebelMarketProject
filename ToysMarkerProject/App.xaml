@@ -4,6 +4,21 @@
              xmlns:local="clr-namespace:ToysMarkerProject"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Window">
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Icon" Value="/Resources/Image/icon.ico"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="Background" Value="#00FFFF"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+
+        <Style x:Key="BlueButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="#0000FF"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
     </Application.Resources>
 </Application>

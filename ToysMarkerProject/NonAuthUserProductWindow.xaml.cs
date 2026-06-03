@@ -27,8 +27,16 @@ namespace ToysMarkerProject
                .Include(p => p.Category)
                .Include(p => p.Manufacturer)
                .Include(p => p.Provider)
+               .Include(p => p.Unit)
                .ToList();
             ProductListView.ItemsSource = db;
+        }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new MainWindow();
+            window.Show();
+            this.Close();
         }
     }
 }

@@ -30,5 +30,12 @@ namespace ToysMarkerProject
                 .ToList();
             DGridOrders.ItemsSource = db;
         }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ManagerWindow(_user);
+            window.Show();
+            this.Close();
+        }
     }
 }

@@ -41,8 +41,28 @@ public partial class Product
     {
         get
         {
-            if (Photo == null) return null;
+            if (string.IsNullOrWhiteSpace(Photo)) return "/Resources/Image/picture.png";
+            string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "Image", Photo);
+            if (System.IO.File.Exists(filePath)) return filePath;
             return "/Resources/Image/" + Photo;
+        }
+    }
+
+    public double DiscountCost
+    {
+        get
+        {
+            return Cost - Cost * Discount / 100.0;
+        }
+    }
+
+    public string RowColor
+    {
+        get
+        {
+            if (Count == 0) return "LightGray";
+            if (Discount > 15) return "#008080";
+            return "White";
         }
     }
 
