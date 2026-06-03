@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Image\1.JPG" />
+    <None Remove="Resources\Image\10.JPG" />
+    <None Remove="Resources\Image\2.JPG" />
+    <None Remove="Resources\Image\3.JPG" />
+    <None Remove="Resources\Image\4.JPG" />
+    <None Remove="Resources\Image\5.JPG" />
+    <None Remove="Resources\Image\6.JPG" />
+    <None Remove="Resources\Image\7.JPG" />
+    <None Remove="Resources\Image\8.JPG" />
+    <None Remove="Resources\Image\9.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Image\1.jpg" />
+    <Resource Include="Resources\Image\10.jpg" />
+    <Resource Include="Resources\Image\2.jpg" />
+    <Resource Include="Resources\Image\3.jpg" />
+    <Resource Include="Resources\Image\4.jpg" />
+    <Resource Include="Resources\Image\5.jpg" />
+    <Resource Include="Resources\Image\6.jpg" />
+    <Resource Include="Resources\Image\7.jpg" />
+    <Resource Include="Resources\Image\8.jpg" />
+    <Resource Include="Resources\Image\9.jpg" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="ToysMarkerProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToysMarkerProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid HorizontalAlignment="Right" Width="800">
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Center" Margin="0,86,0,0" TextWrapping="Wrap" Text="Здравствуйте! Как ваши дела?" VerticalAlignment="Top" FontSize="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,20,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" FontSize="21" RenderTransformOrigin="0.563,-0.848"/>
+        <TextBox x:Name="LoginTextBox" HorizontalAlignment="Left" Width="300" Height="35"  FontSize="16" BorderBrush="Black" Margin="100,5,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,5,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" FontSize="21"/>
+        <PasswordBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Width="300" Height="35" Margin="100,5,0,0" BorderBrush="Black"/>
+            <Button Margin="100,10,400,89" Height="35" Content="Войти" Click="BtnLogin_Click" FontSize="16">
+        </Button>
+        <Button Margin="100,-80,400,80" Height="35" Content="Войти как гость" Click="BtnLoginGuest_Click" FontSize="16"/>
+        </StackPanel>
+    </Grid>
+</Window>
